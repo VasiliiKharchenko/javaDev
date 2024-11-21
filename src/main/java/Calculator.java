@@ -5,7 +5,7 @@ import java.util.Map;
 public class Calculator {
     private static final Scanner scanner = new Scanner(System.in);
     private static final Map<Character, DoubleBinaryOperator> OPERATIONS = Map.of(
-            '+', (a, b) -> a + b,
+            '+', summ(),
             '-', (a, b) -> a - b,
             '*', (a, b) -> a * b,
             '/', (a, b) -> {
@@ -13,6 +13,12 @@ public class Calculator {
                 return a / b;
             }
     );
+
+    private static DoubleBinaryOperator summ() {
+        return (a, b) -> {
+            return a + b;
+        };
+    }
 
     public static void main(String[] args) {
         while (true) {
